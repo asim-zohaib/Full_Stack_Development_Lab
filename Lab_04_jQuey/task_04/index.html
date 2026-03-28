@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabbed Content</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .tab { cursor:pointer; padding:10px; background:#ddd; display:inline-block; }
+        .content { display:none; padding:20px; border:1px solid #ccc; }
+        .active { background:#aaa; }
+    </style>
+</head>
+<body>
+
+<h2>Tabs with Smooth Scroll</h2>
+
+<div>
+    <div class="tab" data-target="#c1">Tab 1</div>
+    <div class="tab" data-target="#c2">Tab 2</div>
+    <div class="tab" data-target="#c3">Tab 3</div>
+</div>
+
+<div id="c1" class="content">Content 1</div>
+<div id="c2" class="content">Content 2</div>
+<div id="c3" class="content">Content 3</div>
+
+<script>
+$(document).ready(function(){
+
+    $(".tab").click(function(){
+        $(".content").slideUp();
+        $(".tab").removeClass("active");
+
+        $(this).addClass("active");
+        let target = $(this).data("target");
+
+        $(target).slideDown();
+
+        $("html, body").animate({
+            scrollTop: $(target).offset().top
+        }, 500);
+    });
+
+});
+</script>
+
+</body>
+</html>

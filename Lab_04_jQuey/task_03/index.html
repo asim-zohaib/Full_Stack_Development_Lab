@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .error { border: 2px solid red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+
+<h2>Interactive Form</h2>
+
+<form id="myForm">
+    <input type="text" id="name" placeholder="Name"><br><br>
+    <input type="email" id="email" placeholder="Email"><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+$(document).ready(function(){
+
+    $("input").blur(function(){
+        if($(this).val() === ""){
+            $(this).addClass("error");
+        } else {
+            $(this).removeClass("error");
+        }
+    });
+
+    $("#myForm").submit(function(e){
+        e.preventDefault();
+        let valid = true;
+
+        $("input").each(function(){
+            if($(this).val() === ""){
+                $(this).addClass("error");
+                valid = false;
+            }
+        });
+
+        if(valid){
+            $("#message").text("Form submitted successfully!")
+                         .addClass("success");
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

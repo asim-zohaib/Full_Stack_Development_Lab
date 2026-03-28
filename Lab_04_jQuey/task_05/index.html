@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Style Editor</h2>
+
+<p id="text">This is editable text block.</p>
+
+<button id="styleBtn">Apply Styles</button>
+<button id="toggleBold">Toggle Bold</button>
+
+<script>
+$(document).ready(function(){
+
+    $("#styleBtn").click(function(){
+        $("#text")
+            .css("color", "blue")
+            .css("background", "lightgray")
+            .css("font-size", "20px");
+    });
+
+    $("#toggleBold").click(function(){
+        $("#text").css("font-weight",
+            $("#text").css("font-weight") === "700" ? "400" : "700"
+        );
+    });
+
+});
+</script>
+
+</body>
+</html>

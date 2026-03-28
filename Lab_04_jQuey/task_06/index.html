@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>API Data Fetcher</h2>
+
+<button id="load">Load Posts</button>
+<ul id="posts"></ul>
+
+<script>
+$(document).ready(function(){
+
+    let start = 0;
+
+    $("#load").click(function(){
+        $.ajax({
+            url: "https://jsonplaceholder.typicode.com/posts?_start="+start+"&_limit=5",
+            method: "GET",
+            success: function(data){
+                data.forEach(function(post){
+                    $("#posts").append("<li><b>"+post.title+"</b><br>"+post.body+"</li><hr>");
+                });
+                start += 5;
+            }
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

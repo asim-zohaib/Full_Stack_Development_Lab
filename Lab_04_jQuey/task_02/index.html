@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        img { width: 400px; height: 250px; }
+        #gallery { text-align: center; }
+    </style>
+</head>
+<body>
+
+<h2>Animated Image Gallery</h2>
+
+<div id="gallery">
+    <img id="image" src="https://picsum.photos/id/1015/400/250">
+    <p id="caption">Nature 1</p>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+</div>
+
+<script>
+$(document).ready(function(){
+
+    let images = [
+        {src:"https://picsum.photos/id/1015/400/250", cap:"Nature 1"},
+        {src:"https://picsum.photos/id/1016/400/250", cap:"Nature 2"},
+        {src:"https://picsum.photos/id/1018/400/250", cap:"Nature 3"}
+    ];
+
+    let index = 0;
+
+    function showImage(){
+        $("#image").fadeOut(500, function(){
+            $(this).attr("src", images[index].src).fadeIn(500);
+        });
+        $("#caption").text(images[index].cap);
+    }
+
+    $("#next").click(function(){
+        index = (index + 1) % images.length;
+        showImage();
+    });
+
+    $("#prev").click(function(){
+        index = (index - 1 + images.length) % images.length;
+        showImage();
+    });
+
+});
+</script>
+
+</body>
+</html>

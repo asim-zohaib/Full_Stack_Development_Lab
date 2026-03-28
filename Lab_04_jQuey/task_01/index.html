@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List Manager</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body { font-family: Arial; }
+        li {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .hovered {
+            background-color: lightyellow;
+        }
+        button { margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>Dynamic List Manager</h2>
+<input type="text" id="itemInput" placeholder="Enter item">
+<button id="addBtn">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+$(document).ready(function(){
+
+    $("#addBtn").click(function(){
+        let item = $("#itemInput").val();
+        if(item !== ""){
+            $("#list").append("<li>"+item+" <button class='delete'>Delete</button></li>");
+            $("#itemInput").val("");
+        }
+    });
+
+    $("#list").on("click", ".delete", function(){
+        $(this).parent().remove();
+    });
+
+    $("#list").on("mouseenter", "li", function(){
+        $(this).addClass("hovered");
+    }).on("mouseleave", "li", function(){
+        $(this).removeClass("hovered");
+    });
+
+});
+</script>
+
+</body>
+</html>

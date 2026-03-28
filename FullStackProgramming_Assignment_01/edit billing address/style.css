@@ -1,0 +1,78 @@
+/* Reset & Base */
+body, h1, p, ul { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; font-size: 13px; color: #333; line-height: 1.4; }
+.container { width: 960px; margin: 0 auto; }
+.red-text { color: #e41e26; }
+
+/* Header Elements */
+.utility-bar { border-bottom: 1px solid #ddd; padding: 5px 0; font-size: 11px; }
+.utility-bar .container { display: flex; justify-content: space-between; }
+.top-links a { color: #666; text-decoration: none; margin-left: 10px; }
+
+.main-header { padding: 15px 0; background: #fff; }
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.brand-name { color: #002e5b; font-size: 32px; letter-spacing: -1px; }
+.brand-tagline { color: #002e5b; font-size: 14px; margin-top: -5px; }
+.cart-box { border: 1px solid #ddd; padding: 8px 15px; border-radius: 3px; }
+
+.red-nav { background: #e41e26; color: #fff; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; height: 40px; }
+.nav-links { list-style: none; display: flex; height: 100%; }
+.nav-links li { 
+    padding: 0 20px; 
+    display: flex; 
+    align-items: center; 
+    border-right: 1px solid #f05a5a; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+.search-box input { padding: 4px; border: none; width: 250px; }
+.search-box button { background: #333; color: white; border: none; padding: 4px 10px; cursor: pointer; }
+
+/* Page Content & Background */
+.page-body {
+    background: url('images/ocean-background.png') no-repeat center top;
+    background-size: cover;
+    padding: 20px 0 60px 0;
+}
+
+.breadcrumb { font-size: 11px; color: #0066cc; margin-bottom: 15px; }
+
+.white-card {
+    background: #fff;
+    padding: 30px;
+    min-height: 700px;
+    border: 1px solid #ccc;
+}
+
+.white-card h1 { font-size: 22px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.intro-text { margin-bottom: 10px; }
+.required-note { font-size: 11px; margin-bottom: 25px; }
+
+/* Form Field Alignment (Matching your Image) */
+.form-group { display: flex; align-items: center; margin-bottom: 10px; }
+.form-group label { width: 150px; text-align: right; margin-right: 15px; font-weight: bold; }
+.form-group label span { color: red; }
+.form-group input { width: 280px; padding: 5px; border: 1px solid #ccc; }
+
+.button-area { margin-left: 165px; margin-top: 20px; }
+.update-btn { 
+    background: #e41e26; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 15px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+/* Logos Strip */
+.partner-strip {
+    background: #fff;
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+.partner-strip img { max-height: 60px; }

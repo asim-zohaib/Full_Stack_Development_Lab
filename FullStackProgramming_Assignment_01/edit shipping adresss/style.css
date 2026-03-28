@@ -1,0 +1,256 @@
+/* 1. Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.red-text {
+    color: #e41e26;
+}
+
+/* 2. Header & Utility Bar */
+.utility-bar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 6px 0;
+    font-size: 11px;
+}
+
+.utility-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-links a {
+    color: #666;
+    text-decoration: none;
+    margin-left: 12px;
+}
+
+.main-header {
+    padding: 20px 0;
+    background: #fff;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-name {
+    color: #002e5b;
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.brand-tagline {
+    color: #002e5b;
+    font-size: 14px;
+    margin-top: -8px;
+}
+
+.cart-box {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* 3. Red Navigation Bar */
+.red-nav {
+    background: #e41e26;
+    color: #fff;
+    height: 42px;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+.nav-links li {
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input {
+    padding: 5px 10px;
+    border: none;
+    width: 260px;
+}
+
+.search-box button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 4. Page Content & Ocean Background */
+.page-body {
+    /* Replace with your local ocean image path */
+    background: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1920&q=80') no-repeat center top;
+    background-size: 100% auto;
+    padding: 25px 0 80px 0;
+}
+
+.breadcrumb {
+    font-size: 11px;
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+.white-card {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.white-card h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.intro-text { margin-bottom: 8px; }
+.required-note { font-size: 11px; margin-bottom: 30px; color: #666; }
+
+/* 5. Form Layout (Fixed Side-Aligned Labels) */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    width: 160px; /* Fixed width for labels */
+    text-align: right;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.form-group label span { color: red; }
+
+.form-group input, .form-group select {
+    width: 320px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.button-area {
+    margin-left: 180px; /* Aligns with input fields */
+    margin-top: 25px;
+}
+
+.update-btn {
+    background: #e41e26;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.update-btn:hover { background: #c31a20; }
+
+/* 6. Partner/Brand Strip (The Image Fix) */
+.partner-strip {
+    background: #fff;
+    margin-top: 40px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between; /* Spreads them out */
+    align-items: center;           /* Centers them vertically */
+    border: 1px solid #ddd;
+}
+
+/* Target the "Save $1000s" banner specifically */
+.partner-strip img:nth-child(1) {
+    width: 240px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Target the 3 brand logos (Oceanic, Caldera, Island) */
+.partner-strip img:nth-child(n+2) {
+    width: 160px;
+    height: 60px;
+    object-fit: contain; /* Keeps the logos from stretching */
+}
+
+/* 7. Dark Footer */
+.dark-footer {
+    background: #001a33;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-col h3 {
+    font-size: 14px;
+    border-bottom: 1px solid #1a3d5c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 8px; font-size: 12px; color: #ccc; cursor: pointer; }
+.footer-col li:hover { color: #fff; }
+
+.newsletter-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.payment-icons img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
